@@ -14,7 +14,7 @@ Contains a list of course exercises that I've worked on while taking the Xamarin
  </li>
   <li><b>AND102 - Activities and Intents</b>
    <ul>
-    <li>Start - the starting project for the rest of the exercises
+    <li>Exercise 0 - the starting project
     </li>
    </ul>
  </li>
