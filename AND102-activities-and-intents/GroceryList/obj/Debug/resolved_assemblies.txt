@@ -1,6 +1,0 @@
-C:\Work\Xamarin\University\AND102-activities-and-intents\GroceryList\obj\Debug\assemblies\GroceryList.dll
-C:\Work\Xamarin\University\AND102-activities-and-intents\GroceryList\obj\Debug\assemblies\Mono.Android.dll
-C:\Work\Xamarin\University\AND102-activities-and-intents\GroceryList\obj\Debug\assemblies\mscorlib.dll
-C:\Work\Xamarin\University\AND102-activities-and-intents\GroceryList\obj\Debug\assemblies\System.Core.dll
-C:\Work\Xamarin\University\AND102-activities-and-intents\GroceryList\obj\Debug\assemblies\System.dll
-C:\Work\Xamarin\University\AND102-activities-and-intents\GroceryList\obj\Debug\assemblies\System.Xml.dll
