@@ -1,0 +1,16 @@
+C:\Work\Xamarin\University\AND102-activities-and-intents\GroceryList\bin\Debug\GroceryList.dll
+C:\Work\Xamarin\University\AND102-activities-and-intents\GroceryList\bin\Debug\GroceryList.pdb
+C:\Work\Xamarin\University\AND102-activities-and-intents\GroceryList\bin\Debug\com.companyname.grocerylist.apk
+C:\Work\Xamarin\University\AND102-activities-and-intents\GroceryList\bin\Debug\com.companyname.grocerylist-Signed.apk
+C:\Work\Xamarin\University\AND102-activities-and-intents\GroceryList\obj\Debug\GroceryList.dll
+C:\Work\Xamarin\University\AND102-activities-and-intents\GroceryList\obj\Debug\GroceryList.pdb
+C:\Work\Xamarin\University\AND102-activities-and-intents\GroceryList\obj\Debug\android\bin\com.companyname.grocerylist.apk
+C:\Work\Xamarin\University\AND102-activities-and-intents\GroceryList\obj\Debug\res\layout\main.xml
+C:\Work\Xamarin\University\AND102-activities-and-intents\GroceryList\obj\Debug\res\values\strings.xml
+C:\Work\Xamarin\University\AND102-activities-and-intents\GroceryList\obj\Debug\res\drawable\icon.png
+C:\Work\Xamarin\University\AND102-activities-and-intents\GroceryList\obj\Debug\res\layout\about.xml
+C:\Work\Xamarin\University\AND102-activities-and-intents\GroceryList\obj\Debug\res\layout\additem.xml
+C:\Work\Xamarin\University\AND102-activities-and-intents\GroceryList\obj\Debug\res\layout\items.xml
+C:\Work\Xamarin\University\AND102-activities-and-intents\GroceryList\obj\Debug\res\layout\details.xml
+C:\Work\Xamarin\University\AND102-activities-and-intents\GroceryList\obj\Debug\R.cs.flag
+C:\Work\Xamarin\University\AND102-activities-and-intents\GroceryList\obj\Debug\uploadflags.txt
