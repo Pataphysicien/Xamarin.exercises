@@ -24,6 +24,8 @@ Contains a list of course exercises that I've worked on while taking the Xamarin
     </li>
     <li>Exercise 5 - Send results back to the Activity that started the current one.
     </li>
+    <li>Exercise 6 - Launch a standard Android Activity (web browser)
+    </li>
     </ul>
  </li>
 </ol>
