@@ -20,7 +20,9 @@ Contains a list of course exercises that I've worked on while taking the Xamarin
     </li>
     <li>Exercise 3 - Finish an Activity
     </li>
-   </ul>
+    <li>Exercise 4 - Load arguments into a Bundle and pass them to an Activity
+    </li>
+    </ul>
  </li>
 </ol>
 
