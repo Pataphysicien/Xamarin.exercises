@@ -18,6 +18,8 @@ Contains a list of course exercises that I've worked on while taking the Xamarin
     </li>
     <li>Exercise 2 - Use explicit Intents to start Activities
     </li>
+    <li>Exercise 3 - Finish an Activity
+    </li>
    </ul>
  </li>
 </ol>
