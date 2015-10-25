@@ -32,12 +32,13 @@ namespace GroceryList
 
 			base.StartActivity (intent);
 		}
-
+			
 		void OnAddItemClick(object sender, EventArgs e)
 		{
 			var intent = new Intent (this, typeof(AddItemActivity));
 
-			base.StartActivity (intent);
+			int requestCode = 100;
+			base.StartActivityForResult(intent, requestCode); 
 		}
 
 		void OnAboutClick(object sender, EventArgs e)
@@ -50,6 +51,12 @@ namespace GroceryList
 		protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
 		{
 			// TODO
+			if (requestCode == 100 && resultCode == Result.Ok) {
+				string name = data.GetStringExtra ("itemName");
+				int count = data.GetIntExtra ("itemCount", -1);
+
+				Items.Add (new Item (name, count));
+			}
 		}
 	}
 }
