@@ -15,6 +15,7 @@ namespace GroceryList
 			int position = 0;
 
 			// TODO
+			position = Intent.GetIntExtra("ItemPosition", -1);
 
 			var item = MainActivity.Items[position];
 
