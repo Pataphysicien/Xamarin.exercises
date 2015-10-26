@@ -32,6 +32,8 @@ Contains a list of course exercises that I've worked on while taking the Xamarin
    <ul>
     <li>Exercise 1 - Populate a ListView using an ArrayAdapter
     </li>
+    <li>Exercise 2 - Handle list-item click events
+    </li>
     </ul>
  </li>
 </ol>
