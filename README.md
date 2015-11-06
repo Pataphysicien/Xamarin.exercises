@@ -44,6 +44,8 @@ Contains a list of course exercises that I've worked on while taking the Xamarin
     <li>Exercise 2 - Replace the generated ViewController.cs with a custom one, and add it
 as the root view controller to the Tip Calculator app
     </li>
+    <li>Exercise 3 - Create UI manually with code (no behavior logic)
+    </li>
    </ul>
  </li>
 </ol>
