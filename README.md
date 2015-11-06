@@ -46,6 +46,8 @@ as the root view controller to the Tip Calculator app
     </li>
     <li>Exercise 3 - Create UI manually with code (no behavior logic)
     </li>
+    <li>Exercise 4 - Add behavior logic to the UI
+    </li>
    </ul>
  </li>
 </ol>

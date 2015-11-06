@@ -38,6 +38,19 @@ namespace TipCalculator
 
             View.AddSubviews (totalAmount, calcButton, resultLabel);
 
+            // add behavior logic 
+            calcButton.TouchUpInside += (sender, e) => 
+            {
+                totalAmount.ResignFirstResponder (); // get rid of keyboard
+
+                double value = 0;
+                Double.TryParse (totalAmount.Text, out value);
+
+                value *= 1.2; // add tips
+
+                resultLabel.Text = $"Tip is {value:C}"; // new C# 6.0 feature
+
+            };
 
 
         }
