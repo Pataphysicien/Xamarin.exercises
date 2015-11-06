@@ -41,7 +41,10 @@ Contains a list of course exercises that I've worked on while taking the Xamarin
    <ul>
     <li>Exercise 1 - Creating a Single View IOS application
     </li>
-    </ul>
+    <li>Exercise 2 - Replace the generated ViewController.cs with a custom one, and add it
+as the root view controller to the Tip Calculator app
+    </li>
+   </ul>
  </li>
 </ol>
 
