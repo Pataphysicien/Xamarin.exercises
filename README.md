@@ -48,7 +48,8 @@ as the root view controller to the Tip Calculator app
     </li>
     <li>Exercise 4 - Add behavior logic to the UI
     </li>
-   </ul>
+    <li>Exercise 5 - homework - let user select tip percent
+    </li>   </ul>
  </li>
 </ol>
 
