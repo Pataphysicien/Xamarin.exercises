@@ -16,6 +16,10 @@ namespace Fireworks
 	{
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
+		UIButton buttonAbout { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
 		UIButton buttonStart { get; set; }
 
 		[Outlet]
@@ -36,6 +40,10 @@ namespace Fireworks
 
 		void ReleaseDesignerOutlets ()
 		{
+			if (buttonAbout != null) {
+				buttonAbout.Dispose ();
+				buttonAbout = null;
+			}
 			if (buttonStart != null) {
 				buttonStart.Dispose ();
 				buttonStart = null;

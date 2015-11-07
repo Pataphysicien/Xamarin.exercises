@@ -28,6 +28,19 @@ namespace Fireworks
             {
                 _fireworks.Start ();
             };
+
+            buttonAbout.TouchUpInside += OnAbout;
+        }
+
+        void OnAbout (object sender, EventArgs e)
+        {
+            var storyboard = this.Storyboard;
+            var aboutViewController = 
+                (AboutViewController)storyboard.InstantiateViewController ("AboutViewController");
+
+            aboutViewController.ModalTransitionStyle = UIModalTransitionStyle.CoverVertical;
+
+            this.PresentViewController (aboutViewController, true, null);
         }
 
         partial void NightValueChanged (UISwitch sender)
