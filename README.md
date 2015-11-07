@@ -57,6 +57,8 @@ as the root view controller to the Tip Calculator app
    <ul>
     <li>Exercise 1 - Creating a Single View IOS application with Xamarin.iOS Designer
     </li>
+    <li>Exercise 2 - Using AutoLayout
+    </li>
    </ul>
  </li>
 </ol>
