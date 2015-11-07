@@ -59,6 +59,8 @@ as the root view controller to the Tip Calculator app
     </li>
     <li>Exercise 2 - Using AutoLayout
     </li>
+    <li>Exercise 3 - Add behavior to views programmatically
+    </li>
    </ul>
  </li>
 </ol>

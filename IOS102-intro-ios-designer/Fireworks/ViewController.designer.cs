@@ -14,8 +14,40 @@ namespace Fireworks
 	[Register ("ViewController")]
 	partial class ViewController
 	{
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UIButton buttonStart { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UISlider sliderSize { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UISwitch switchNight { get; set; }
+
+		[Action ("NightValueChanged:")]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		partial void NightValueChanged (UISwitch sender);
+
+		[Action ("SliderSizeValueChanged:")]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		partial void SliderSizeValueChanged (UISlider sender);
+
 		void ReleaseDesignerOutlets ()
 		{
+			if (buttonStart != null) {
+				buttonStart.Dispose ();
+				buttonStart = null;
+			}
+			if (sliderSize != null) {
+				sliderSize.Dispose ();
+				sliderSize = null;
+			}
+			if (switchNight != null) {
+				switchNight.Dispose ();
+				switchNight = null;
+			}
 		}
 	}
 }
