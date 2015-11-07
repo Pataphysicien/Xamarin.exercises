@@ -29,7 +29,7 @@ namespace Fireworks
                 _fireworks.Start ();
             };
 
-            buttonAbout.TouchUpInside += OnAbout;
+            //buttonAbout.TouchUpInside += OnAbout;
         }
 
         void OnAbout (object sender, EventArgs e)

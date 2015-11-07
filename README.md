@@ -63,6 +63,8 @@ as the root view controller to the Tip Calculator app
     </li>
     <li>Exercise 4 - Add second screen and display programmatically
     </li>
+    <li>Exercise 5 - Display second screen using Seque
+    </li>
    </ul>
  </li>
 </ol>

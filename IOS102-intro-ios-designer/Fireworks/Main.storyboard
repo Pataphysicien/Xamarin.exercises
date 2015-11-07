@@ -66,6 +66,9 @@
                                 <state key="highlighted"/>
                                 <state key="selected"/>
                                 <state key="disabled"/>
+                                <connections>
+                                    <segue id="307" destination="186" kind="modal" modalTransitionStyle="3"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>
@@ -142,7 +145,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="188" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="392" y="6"/>
+            <point key="canvasLocation" x="444" y="6"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
