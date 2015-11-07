@@ -49,7 +49,15 @@ as the root view controller to the Tip Calculator app
     <li>Exercise 4 - Add behavior logic to the UI
     </li>
     <li>Exercise 5 - homework - let user select tip percent
-    </li>   </ul>
+    </li>
+   </ul>
+ </li>
+</li>
+   <li><b>IOS102 - Getting Started with iOS Designer</b>
+   <ul>
+    <li>Exercise 1 - Creating a Single View IOS application with Xamarin.iOS Designer
+    </li>
+   </ul>
  </li>
 </ol>
 
