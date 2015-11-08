@@ -53,7 +53,7 @@ as the root view controller to the Tip Calculator app
    </ul>
  </li>
 </li>
-   <li><b>IOS102 - Getting Started with iOS Designer</b>
+  <li><b>IOS102 - Getting Started with iOS Designer</b>
    <ul>
     <li>Exercise 1 - Creating a Single View IOS application with Xamarin.iOS Designer
     </li>
@@ -64,6 +64,12 @@ as the root view controller to the Tip Calculator app
     <li>Exercise 4 - Add second screen and display programmatically
     </li>
     <li>Exercise 5 - Display second screen using Seque
+    </li>
+   </ul>
+ </li>
+  <li><b>IOS110 - TableView Fundamentals
+   <ul>
+    <li>Exercise 1 - Add a TableView both programmatically and using storyboard.
     </li>
    </ul>
  </li>
