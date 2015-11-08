@@ -73,6 +73,8 @@ as the root view controller to the Tip Calculator app
     </li>
     <li>Exercise 2 - Populating a Table View in 2 ways: UITableViewSource and UITableViewController.
     </li>
+    <li>Exercise 3 -Using the built-in cell styles.
+    </li>
    </ul>
  </li>
 </ol>
