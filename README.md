@@ -67,7 +67,7 @@ as the root view controller to the Tip Calculator app
     </li>
    </ul>
  </li>
-  <li><b>IOS110 - TableView Fundamentals
+  <li><b>IOS110 - TableView Fundamentals</b>
    <ul>
     <li>Exercise 1 - Add a TableView both programmatically and using storyboard.
     </li>
