@@ -40,8 +40,8 @@ namespace MailBox
 		}
 
 // ------------------------------------------------------------------------------
-// Exercise-4 - 1st approach to dismiss view programmatically
-//            - need to assign method to an event via the Storyboard
+// Exercise-4 - 1st approach to dismiss view code-behind
+//            - need to assign this method to an event via the Storyboard
 //
 //        partial void OnDismiss (UIButton sender)
 //        {

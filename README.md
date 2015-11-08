@@ -77,6 +77,8 @@ as the root view controller to the Tip Calculator app
     </li>
     <li>Exercise 4 -Using the accessory styles and row selection,
     </li>
+    <li>Exercise 5 - Implement cell reuse in 2 ways: code-behind and storyboard.
+    </li>
    </ul>
  </li>
 </ol>

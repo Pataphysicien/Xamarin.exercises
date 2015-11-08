@@ -17,7 +17,7 @@ namespace MailBox
         // ------------------------------------------------------------------------------
         // Exercise-2 
         // 1st approach - using UITableViewController to populate a TableView 
-        EmailServer _emailServer = new EmailServer ();
+        EmailServer _emailServer = new EmailServer (1000);
 
         public override nint RowsInSection (UITableView tableView, nint section)
         {
@@ -27,18 +27,19 @@ namespace MailBox
         public override UITableViewCell GetCell (UITableView tableView, NSIndexPath indexPath)
         {
             //UITableViewCell cell = GetCell_DefaultStyle (tableView, indexPath);
-            //UITableViewCell cell = GetCell_SubTitleStyle (tableView, indexPath);
-            UITableViewCell cell = GetCell_Value1Style (tableView, indexPath);
+            UITableViewCell cell = GetCell_SubTitleStyle (tableView, indexPath);
+            //UITableViewCell cell = GetCell_Value1Style (tableView, indexPath);
             //UITableViewCell cell = GetCell_Value2Style (tableView, indexPath);
 
-            cell.Accessory = UITableViewCellAccessory.DetailDisclosureButton;
 
             return cell;
         }
 
+
+
         UITableViewCell GetCell_DefaultStyle (UITableView tableView, NSIndexPath indexPath)
         {
-            UITableViewCell cell = new UITableViewCell (UITableViewCellStyle.Default, null);
+            UITableViewCell cell = CreateReusableCell (tableView, UITableViewCellStyle.Default, indexPath);
 
             var emailItem = _emailServer.Email [indexPath.Row];
             cell.TextLabel.Text = emailItem.Subject;
@@ -49,22 +50,19 @@ namespace MailBox
 
         UITableViewCell GetCell_SubTitleStyle (UITableView tableView, NSIndexPath indexPath)
         {
-            UITableViewCell cell = new UITableViewCell (UITableViewCellStyle.Subtitle, null);
+            UITableViewCell cell = CreateReusableCell (tableView, UITableViewCellStyle.Subtitle, indexPath);
 
             var emailItem = _emailServer.Email [indexPath.Row];
             cell.TextLabel.Text = emailItem.Subject;
             cell.DetailTextLabel.Text = emailItem.Body;
             cell.ImageView.Image = emailItem.GetImage ();
 
-            cell.TextLabel.TextColor = UIColor.Blue;
-            cell.DetailTextLabel.TextColor = UIColor.Gray;
-
             return cell;
         }
 
         UITableViewCell GetCell_Value1Style (UITableView tableView, NSIndexPath indexPath)
         {
-            UITableViewCell cell = new UITableViewCell (UITableViewCellStyle.Value1, null);
+            UITableViewCell cell = CreateReusableCell (tableView, UITableViewCellStyle.Value1, indexPath);
 
             var emailItem = _emailServer.Email [indexPath.Row];
 
@@ -76,16 +74,13 @@ namespace MailBox
             cell.DetailTextLabel.Text = emailItem.Body;
             cell.ImageView.Image = emailItem.GetImage ();
 
-            cell.TextLabel.TextColor = UIColor.Blue;
-            cell.DetailTextLabel.TextColor = UIColor.Gray;
-
             return cell;
         }
 
        
         UITableViewCell GetCell_Value2Style (UITableView tableView, NSIndexPath indexPath)
         {
-            UITableViewCell cell = new UITableViewCell (UITableViewCellStyle.Value2, null);
+            UITableViewCell cell = CreateReusableCell (tableView, UITableViewCellStyle.Value2, indexPath);
 
             var emailItem = _emailServer.Email [indexPath.Row];
             cell.TextLabel.Text = emailItem.Subject;
@@ -98,26 +93,24 @@ namespace MailBox
             if( cell.ImageView != null )
                 cell.ImageView.Image = emailItem.GetImage ();
 
-            cell.TextLabel.TextColor = UIColor.Blue;
-            cell.DetailTextLabel.TextColor = UIColor.Gray;
-
              return cell;
         }
         // ------------------------------------------------------------------------------
     
         // ------------------------------------------------------------------------------
         // Exercise-4 
-        public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
-        {
-            var emailItem = _emailServer.Email [indexPath.Row];
-
-            var storyboard = UIStoryboard.FromName ("Main", null);
-            var detailsViewController = 
-                (DetailsViewController)storyboard.InstantiateViewController ("DetailsViewController");
-
-            detailsViewController.Item = emailItem;
-            PresentViewController (detailsViewController, true, null);
-        }
+// Removed in Exercise-5 and do it in Storyboard
+//        public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
+//        {
+//            var emailItem = _emailServer.Email [indexPath.Row];
+//
+//            var storyboard = UIStoryboard.FromName ("Main", null);
+//            var detailsViewController = 
+//                (DetailsViewController)storyboard.InstantiateViewController ("DetailsViewController");
+//
+//            detailsViewController.Item = emailItem;
+//            PresentViewController (detailsViewController, true, null);
+//        }
 
         public override void AccessoryButtonTapped (UITableView tableView, NSIndexPath indexPath)
         {
@@ -143,6 +136,81 @@ namespace MailBox
         public override void ViewDidLoad ()
         {
             this.TableView.ContentInset = new UIEdgeInsets (20, 0, 0, 0); // ** push this tableview down by 20
+        }
+
+        // ------------------------------------------------------------------------------
+        // Exercise-5 - 1st approach
+        //            - create reusable cell via code-behind
+        const string CellId = "EmailCell";
+        static nint _reusableCellCount = 0;
+        UITableViewCell CreateReusableCell(UITableView tableView, UITableViewCellStyle style, NSIndexPath indexPath)
+        {
+            //return CreateReusableCell_CodeBehind (tableView, style, indexPath);
+            return CreateReusableCell_Storyboard (tableView, style, indexPath);
+
+        }
+
+        UITableViewCell CreateReusableCell_Storyboard(UITableView tableView, UITableViewCellStyle style, NSIndexPath indexPath)
+        {
+            UITableViewCell cell = tableView.DequeueReusableCell (CellId, indexPath);
+            if (cell == null)
+            {
+                // properties are set in the Storyboard
+            }
+            else
+            {
+                if (cell.ImageView != null &&
+                    cell.ImageView.Image != null)
+                {
+                    cell.ImageView.Image.Dispose ();
+                }
+
+            }
+            return cell;
+        }
+
+        UITableViewCell CreateReusableCell_CodeBehind(UITableView tableView, UITableViewCellStyle style, NSIndexPath indexPath)
+        {
+            UITableViewCell cell = tableView.DequeueReusableCell (CellId, indexPath);
+            if (cell == null)
+            {
+                cell = new UITableViewCell (style, CellId);
+
+                cell.TextLabel.TextColor = UIColor.Blue;
+                cell.Accessory = UITableViewCellAccessory.DetailDisclosureButton;
+
+                if( cell.DetailTextLabel != null)
+                    cell.DetailTextLabel.TextColor = UIColor.Gray;
+
+                ++_reusableCellCount;
+                Console.WriteLine ("Reusable cell count: {0}", _reusableCellCount);
+            }
+            else
+            {
+                if (cell.ImageView != null)
+                {
+                    cell.ImageView.Image.Dispose ();
+                }
+
+            }
+            return cell;
+        }
+
+        public override void PrepareForSegue (UIStoryboardSegue segue, NSObject sender)
+        {
+            if (segue.Identifier == "ShowDetails")
+            {
+                var emailItem = _emailServer.Email [TableView.IndexPathForSelectedRow.Row];
+    
+                var detailsViewController = 
+                    segue.DestinationViewController as DetailsViewController;
+
+                if (detailsViewController != null)
+                {
+                    detailsViewController.item = emailItem;
+                }
+
+            }
         }
     }
 }
