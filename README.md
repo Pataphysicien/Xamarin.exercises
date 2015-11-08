@@ -71,6 +71,8 @@ as the root view controller to the Tip Calculator app
    <ul>
     <li>Exercise 1 - Add a TableView both programmatically and using storyboard.
     </li>
+    <li>Exercise 2 - Populating a Table View in 2 ways: UITableViewSource and UITableViewController.
+    </li>
    </ul>
  </li>
 </ol>
