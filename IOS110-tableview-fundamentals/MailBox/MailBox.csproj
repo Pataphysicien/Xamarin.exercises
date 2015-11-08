@@ -93,6 +93,10 @@
       <DependentUpon>TableViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="EmailServer.cs" />
+    <Compile Include="DetailsViewController.cs" />
+    <Compile Include="DetailsViewController.designer.cs">
+      <DependentUpon>DetailsViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>

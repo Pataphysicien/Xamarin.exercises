@@ -15,6 +15,7 @@ namespace MailBox
 		}
 
         // ------------------------------------------------------------------------------
+        // Exercise-2 
         // 1st approach - using UITableViewController to populate a TableView 
         EmailServer _emailServer = new EmailServer ();
 
@@ -27,8 +28,10 @@ namespace MailBox
         {
             //UITableViewCell cell = GetCell_DefaultStyle (tableView, indexPath);
             //UITableViewCell cell = GetCell_SubTitleStyle (tableView, indexPath);
-            //UITableViewCell cell = GetCell_Value1Style (tableView, indexPath);
-            UITableViewCell cell = GetCell_Value2Style (tableView, indexPath);
+            UITableViewCell cell = GetCell_Value1Style (tableView, indexPath);
+            //UITableViewCell cell = GetCell_Value2Style (tableView, indexPath);
+
+            cell.Accessory = UITableViewCellAccessory.DetailDisclosureButton;
 
             return cell;
         }
@@ -79,7 +82,7 @@ namespace MailBox
             return cell;
         }
 
-        // *** 
+       
         UITableViewCell GetCell_Value2Style (UITableView tableView, NSIndexPath indexPath)
         {
             UITableViewCell cell = new UITableViewCell (UITableViewCellStyle.Value2, null);
@@ -98,9 +101,48 @@ namespace MailBox
             cell.TextLabel.TextColor = UIColor.Blue;
             cell.DetailTextLabel.TextColor = UIColor.Gray;
 
-            return cell;
+             return cell;
         }
         // ------------------------------------------------------------------------------
     
+        // ------------------------------------------------------------------------------
+        // Exercise-4 
+        public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
+        {
+            var emailItem = _emailServer.Email [indexPath.Row];
+
+            var storyboard = UIStoryboard.FromName ("Main", null);
+            var detailsViewController = 
+                (DetailsViewController)storyboard.InstantiateViewController ("DetailsViewController");
+
+            detailsViewController.Item = emailItem;
+            PresentViewController (detailsViewController, true, null);
+        }
+
+        public override void AccessoryButtonTapped (UITableView tableView, NSIndexPath indexPath)
+        {
+            var emailItem = _emailServer.Email [indexPath.Row];
+
+            var controller = UIAlertController.Create (
+                                 emailItem.Subject,
+                                 emailItem.Body,
+                                 UIAlertControllerStyle.Alert);
+            controller.AddAction (UIAlertAction.Create ("OK",
+                                                       UIAlertActionStyle.Default, 
+                                                        null)
+                                );
+            PresentViewController (controller, true, null);
+            
+        }
+
+        [Action("UnwindToTableViewController:")]
+        public void UnwindToTableViewController(UIStoryboardSegue seque)
+        {
+        }
+
+        public override void ViewDidLoad ()
+        {
+            this.TableView.ContentInset = new UIEdgeInsets (20, 0, 0, 0); // ** push this tableview down by 20
+        }
     }
 }
