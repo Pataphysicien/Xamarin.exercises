@@ -80,7 +80,7 @@ as the root view controller to the Tip Calculator app
     <li>Exercise 5 - Implement cell reuse in 2 ways: code-behind and storyboard.
     </li>
    </ul>
- </li>
+  </li>
   <li><b>IOS205 - Navigation Patterns</b>
    <ul>
     <li>Exercise 1 - Stack Navigation.
@@ -88,6 +88,12 @@ as the root view controller to the Tip Calculator app
     <li>Exercise 2 - Tab Navigation.
     </li>
     <li>Exercise 3 - Master/Detail Navigation.
+    </li>
+   </ul>
+ </li>
+  <li><b>IOS210 - Intro to Backgrounding: Running Finite-Length Tasks</b>
+   <ul>
+    <li>Exercise 1 - Integrate a Finite-Length Task with the application lifecycle.
     </li>
    </ul>
  </li>
