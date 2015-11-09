@@ -95,6 +95,8 @@ as the root view controller to the Tip Calculator app
    <ul>
     <li>Exercise 1 - Integrate a Finite-Length Task with the application lifecycle.
     </li>
+    <li>Exercise 2 - Code a “cancellable” Finite-Length Task.
+    </li>
    </ul>
  </li>
 </ol>
