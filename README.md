@@ -81,6 +81,12 @@ as the root view controller to the Tip Calculator app
     </li>
    </ul>
  </li>
+  <li><b>IOS205 - Navigation Patterns</b>
+   <ul>
+    <li>Exercise 1 - Stack Navigation.
+    </li>
+   </ul>
+ </li>
 </ol>
 
 
