@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4451" systemVersion="13A461" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="193">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4451" systemVersion="13A461" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="519">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733.0"/>
     </dependencies>
@@ -75,10 +75,12 @@
                         <outlet property="lblSeconds" destination="257" id="name-outlet-257"/>
                         <outlet property="lblAmPm" destination="254" id="name-outlet-254"/>
                     </connections>
+                    <tabBarItem key="tabBarItem" title="Clock" id="564" image="clock_icon.png"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="195" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="222" y="31"/>
+            <point key="canvasLocation" x="1042" y="51"/>
         </scene>
         <scene sceneID="205">
             <objects>
@@ -144,6 +146,7 @@
                                     <color key="titleColor" colorSpace="calibratedRGB" red="0.25882352941176473" green="0.28627450980392155" blue="0.30588235294117649" alpha="1"/>
                                 </state>
                                 <connections>
+                                    <segue id="805" destination="413" kind="push"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -171,10 +174,12 @@
                         <outlet property="lblLastSplit" destination="348" id="name-outlet-348"/>
                         <outlet property="btnViewSplits" destination="400" id="name-outlet-400"/>
                     </connections>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationItem title="Title" id="778" key="navigationItem"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="208" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="647" y="21"/>
+            <point key="canvasLocation" x="862" y="1311"/>
         </scene>
         <scene sceneID="212">
             <objects>
@@ -203,10 +208,12 @@
                     <connections>
                         <outlet property="AboutWebView" destination="225" id="name-outlet-225"/>
                     </connections>
+                    <tabBarItem key="tabBarItem" title="About" id="632" image="about_icon.png"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="215" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1527" y="23"/>
+            <point key="canvasLocation" x="1515" y="33"/>
         </scene>
         <scene sceneID="412">
             <objects>
@@ -246,10 +253,46 @@
                             <outlet property="delegate" destination="413" id="416"/>
                         </connections>
                     </tableView>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="419" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1103" y="22"/>
+            <point key="canvasLocation" x="1530" y="1162"/>
+        </scene>
+        <scene sceneID="518">
+            <objects>
+                <tabBarController definesPresentationContext="YES" id="519" sceneMemberID="viewController">
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="524">
+                        <rect key="frame" x="0.0" y="431" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue id="565" destination="193" kind="relationship" relationship="viewControllers"/>
+                        <segue id="633" destination="213" kind="relationship" relationship="viewControllers"/>
+                        <segue id="753" destination="716" kind="relationship" relationship="viewControllers"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="525" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="248" y="428"/>
+        </scene>
+        <scene sceneID="715">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="716" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="719">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    </navigationBar>
+                    <connections>
+                        <segue id="779" destination="206" kind="relationship" relationship="rootViewController"/>
+                    </connections>
+                    <tabBarItem key="tabBarItem" title="Stop Watch" id="752" image="stopwatch_icon.png"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="720" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="272" y="1223"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -259,5 +302,8 @@
     </simulatedMetricsContainer>
     <resources>
         <image name="Logo" width="600" height="187"/>
+        <image name="about_icon.png" width="25" height="25"/>
+        <image name="clock_icon.png" width="25" height="25"/>
+        <image name="stopwatch_icon.png" width="25" height="25"/>
     </resources>
 </document>

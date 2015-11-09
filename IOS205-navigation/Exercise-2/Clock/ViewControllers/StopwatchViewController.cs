@@ -85,5 +85,24 @@ namespace Clock
 				lblLastSplit.Text = String.Format("[Lap {0}] ", listSplits.Count + 1) + split.ToString(tsFormat);
 			});
 		}
+
+
+        public override void PrepareForSegue (UIStoryboardSegue segue, NSObject sender)
+        {
+            base.PrepareForSegue (segue, sender);
+
+            if (sender.GetType () == typeof(UIButton))
+            {
+                if (sender == btnViewSplits) 
+                {
+                    var splitsVC = segue.DestinationViewController as SplitsViewController;
+
+                    if (splitsVC != null) 
+                    {
+                        splitsVC.SplitTimes = this.listSplits;
+                    }
+                }
+            }
+        }
 	}
 }

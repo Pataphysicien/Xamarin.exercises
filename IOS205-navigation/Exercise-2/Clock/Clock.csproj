@@ -145,5 +145,14 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\About.html" />
+    <BundleResource Include="Resources\about_icon.png" />
+    <BundleResource Include="Resources\about_icon%402x.png" />
+    <BundleResource Include="Resources\about_icon%403x.png" />
+    <BundleResource Include="Resources\clock_icon.png" />
+    <BundleResource Include="Resources\clock_icon%402x.png" />
+    <BundleResource Include="Resources\clock_icon%403x.png" />
+    <BundleResource Include="Resources\stopwatch_icon.png" />
+    <BundleResource Include="Resources\stopwatch_icon%402x.png" />
+    <BundleResource Include="Resources\stopwatch_icon%403x.png" />
   </ItemGroup>
 </Project>
