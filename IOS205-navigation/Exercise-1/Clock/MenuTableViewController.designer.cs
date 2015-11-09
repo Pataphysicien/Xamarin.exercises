@@ -14,16 +14,8 @@ namespace Clock
 	[Register ("MenuTableViewController")]
 	partial class MenuTableViewController
 	{
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		UITableView MyTableView { get; set; }
-
 		void ReleaseDesignerOutlets ()
 		{
-			if (MyTableView != null) {
-				MyTableView.Dispose ();
-				MyTableView = null;
-			}
 		}
 	}
 }

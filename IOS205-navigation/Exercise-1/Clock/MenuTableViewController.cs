@@ -50,7 +50,21 @@ namespace Clock
 
 			public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
 			{
-
+                switch (indexPath.Row)
+                {
+                case 0: //clock
+                    var clockVC = controller.Storyboard.InstantiateViewController ("ClockViewController");
+                    controller.NavigationController.PushViewController (clockVC, true);
+                    break;
+                case 1://stopwatch
+                    var stopwatchVC = controller.Storyboard.InstantiateViewController ("StopwatchViewController");
+                    controller.NavigationController.PushViewController (stopwatchVC, true);
+                    break;
+                case 2://about
+                    var aboutVC = controller.Storyboard.InstantiateViewController ("AboutViewController");
+                    controller.NavigationController.PushViewController (aboutVC, true);
+                    break;
+                }
 			}
 		}
 	}

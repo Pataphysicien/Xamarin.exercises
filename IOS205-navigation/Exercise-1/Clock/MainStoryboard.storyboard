@@ -144,6 +144,7 @@
                                     <color key="titleColor" colorSpace="calibratedRGB" red="0.25882352941176473" green="0.28627450980392155" blue="0.30588235294117649" alpha="1"/>
                                 </state>
                                 <connections>
+                                    <segue id="568" destination="413" kind="push"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -267,7 +268,7 @@
         </scene>
         <scene sceneID="505">
             <objects>
-                <tableViewController id="506" sceneMemberID="viewController">
+                <tableViewController id="506" sceneMemberID="viewController" customClass="MenuTableViewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="507">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
