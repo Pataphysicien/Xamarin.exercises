@@ -21,14 +21,36 @@ namespace Clock
 		public StopwatchViewController (IntPtr handle) : base (handle)
 		{
 		}
+        public override void ViewDidLoad ()
+        {
+            base.ViewDidLoad ();
 
-		public override void ViewDidLoad ()
-		{
-			base.ViewDidLoad ();
+            btnStart.TouchUpInside += BtnStart_TouchUpInside;
+            btnSplit.TouchUpInside += BtnSplit_TouchUpInside;
 
-			btnStart.TouchUpInside += BtnStart_TouchUpInside;
-			btnSplit.TouchUpInside += BtnSplit_TouchUpInside;
-		}
+            btnViewSplits.TouchUpInside += BtnViewSplits_TouchUpInside;
+        }
+
+        // ----------------------------------------
+        // Exercise-3 bonus
+        // - navigating to the SplitsViewController
+        void BtnViewSplits_TouchUpInside (object sender, EventArgs e)
+        {
+            var splitsVS = (SplitsViewController)Storyboard.InstantiateViewController ("SplitsViewController");
+
+            if (splitsVS == null)
+                return;
+
+            //don't forget to pass the split time data
+            splitsVS.SplitTimes = this.listSplits;
+
+            var navVC = new UINavigationController (splitsVS);
+
+
+            PresentModalViewController (navVC, true);
+        }
+
+
 
 		void BtnSplit_TouchUpInside (object sender, EventArgs eArgs)
 		{

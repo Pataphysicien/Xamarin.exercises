@@ -11,8 +11,8 @@ using UIKit;
 
 namespace Clock
 {
-	[Register ("SplitsViewController")]
-	partial class SplitsViewController
+	[Register ("MenuTableViewController")]
+	partial class MenuTableViewController
 	{
 		void ReleaseDesignerOutlets ()
 		{

@@ -15,12 +15,21 @@ namespace Clock
 
 		}
 
-		public override void ViewWillAppear (bool animated)
-		{
-			base.ViewWillAppear (animated);
 
-			this.TableView.Source = new SplitsTableViewSource (SplitTimes);
-		}
+        public override void ViewWillAppear (bool animated)
+        {
+            base.ViewWillAppear (animated);
+
+            this.TableView.Source = new SplitsTableViewSource (SplitTimes);
+
+            // ----------------------------------------
+            // Exercise-3 bonus
+            // - navigating to the SplitsViewController
+            // - add a right bar button item to dismiss the modal dialog
+            var barButton = new UIBarButtonItem(UIBarButtonSystemItem.Done);
+            barButton.Clicked += (sender, e) => DismissModalViewController(true);
+            this.NavigationItem.RightBarButtonItem = barButton;
+        }
 
 		public class SplitsTableViewSource : UITableViewSource
 		{
