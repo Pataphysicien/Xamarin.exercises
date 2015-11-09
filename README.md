@@ -87,6 +87,8 @@ as the root view controller to the Tip Calculator app
     </li>
     <li>Exercise 2 - Tab Navigation.
     </li>
+    <li>Exercise 3 - Master/Detail Navigation.
+    </li>
    </ul>
  </li>
 </ol>
