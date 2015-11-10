@@ -8,6 +8,9 @@ namespace CancellableTasks
 {
 	partial class CancellableTaskViewController : UIViewController
 	{
+        CancellationTokenSource cts = new CancellationTokenSource();
+
+
 		public CancellableTaskViewController (IntPtr handle) : base (handle)
 		{
 		}
@@ -36,6 +39,7 @@ namespace CancellableTasks
 				btnCalculate.SetTitle ("Start calculating", UIControlState.Normal);
 
 				// TODO: Cancel calculation if it is currently running.
+                this.cts.Cancel ();
 				return;
 			}
 	
@@ -43,7 +47,9 @@ namespace CancellableTasks
 			btnCalculate.SetTitle ("Stop calculating", UIControlState.Normal);
 			this.txtPi.Text = string.Empty;
 
+
 			// TODO: Reset cancellation token source.
+            this.cts = new CancellationTokenSource();
 
 			// Start a background task to request more time from the operating system.
 			// This has no negative side effect if called while the app is in the foreground.
@@ -54,8 +60,8 @@ namespace CancellableTasks
 			try
 			{
 				await Task.Run (() =>
-   				    PiHelper.CalcPi (pieceOfPi => this.UpdateUi (pieceOfPi), default(CancellationToken)), 
-					default(CancellationToken));
+                    PiHelper.CalcPi (pieceOfPi => this.UpdateUi (pieceOfPi), this.cts.Token), // pass to UpdateUi()
+                    this.cts.Token);  // pass to Task.Run()
 			}
 			catch (OperationCanceledException)
 			{
@@ -78,6 +84,7 @@ namespace CancellableTasks
 		void UpdateUi (string pieceOfPi)
 		{
 			// TODO: Throw OperationCanceledException if token has been cancelled
+            this.cts.Token.ThrowIfCancellationRequested ();
 		
 			this.BeginInvokeOnMainThread (() => {
 				// Report remaining background time if app is not in foreground.
@@ -103,6 +110,7 @@ namespace CancellableTasks
 		{
 			Console.WriteLine ("Background time expires - cancelling task!");
 			// TODO: Cancel the token.
+            this.cts.Cancel ();
 		}
 	}
 }
