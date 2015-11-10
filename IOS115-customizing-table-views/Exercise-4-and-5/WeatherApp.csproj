@@ -8,6 +8,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>WeatherApp</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>WeatherApp</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -84,6 +85,10 @@
       <DependentUpon>WeatherTVC.cs</DependentUpon>
     </Compile>
     <Compile Include="Weather.cs" />
+    <Compile Include="WeatherTableCell.cs" />
+    <Compile Include="WeatherTableCell.designer.cs">
+      <DependentUpon>WeatherTableCell.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>

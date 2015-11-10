@@ -25,13 +25,9 @@ namespace WeatherApp
 		
 		public override UITableViewCell GetCell (UITableView tableView, NSIndexPath indexPath)
 		{
-			var cell = tableView.DequeueReusableCell (CELL_ID);
+            var cell = tableView.DequeueReusableCell (CELL_ID) as WeatherTableCell;
 
-			if (cell == null) {
-				cell = new UITableViewCell (UITableViewCellStyle.Default, CELL_ID);
-			}
-
-			cell.TextLabel.Text = data [indexPath.Row].ToString ();
+            cell.UpdateData (data[indexPath.Row]);
 
 			return cell;
 		}
