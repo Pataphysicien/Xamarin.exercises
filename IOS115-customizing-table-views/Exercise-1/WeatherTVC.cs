@@ -22,13 +22,28 @@ namespace WeatherApp
 		{
 			var cell = tableView.DequeueReusableCell (CELL_ID);
 
-			if (cell == null) {
-				cell = new UITableViewCell (UITableViewCellStyle.Default, CELL_ID);
-			}
+            if (cell == null)
+            {
+                cell = new UITableViewCell (UITableViewCellStyle.Subtitle, CELL_ID); // change cell style from default
 
-			cell.TextLabel.Text = data [indexPath.Row].ToString ();
+                // ---------------------------------------------------------------
+                // customize a cell's font and color
+                cell.TextLabel.Font = UIFont.SystemFontOfSize (20, UIFontWeight.Bold);
+                cell.TextLabel.TextColor = UIColor.FromRGB (59, 102, 136);
+            
+                cell.DetailTextLabel.Font = UIFont.ItalicSystemFontOfSize (12);
+                cell.DetailTextLabel.TextColor = UIColor.FromRGB (0, 142, 255);
+            }
 
-			return cell;
+            var weather = data [indexPath.Row];
+
+            cell.TextLabel.Text = weather.City;
+            cell.DetailTextLabel.Text = weather.ToString ();
+
+            // always use UIImage.FromBundle() because it implements caching to give slightly better performance.
+            cell.ImageView.Image = UIImage.FromBundle (weather.CurrentConditions.ToString () + ".png");
+
+           	return cell;
 		}
 
 		public override nint RowsInSection (UITableView tableview, nint section)
