@@ -14,17 +14,21 @@ namespace WeatherApp
 		public WeatherTVC (IntPtr handle) : base (handle)
 		{
 			data = WeatherFactory.GetWeatherData ();
+
+            TableView.RegisterClassForCellReuse (typeof(WeatherCell), CELL_ID);
 		}
 
 		public override UITableViewCell GetCell (UITableView tableView, NSIndexPath indexPath)
 		{
-			var cell = tableView.DequeueReusableCell (CELL_ID);
+            var cell = tableView.DequeueReusableCell (CELL_ID) as WeatherCell;
 
-			if (cell == null) {
-				cell = new UITableViewCell (UITableViewCellStyle.Default, CELL_ID);
-			}
+            cell.UpdateData (data [indexPath.Row]);
 
-			cell.TextLabel.Text = data [indexPath.Row].ToString ();
+//			if (cell == null) {
+//				cell = new UITableViewCell (UITableViewCellStyle.Default, CELL_ID);
+//			}
+//
+//			cell.TextLabel.Text = data [indexPath.Row].ToString ();
 
 			return cell;
 		}
