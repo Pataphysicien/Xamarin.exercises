@@ -91,6 +91,8 @@ as the root view controller to the Tip Calculator app
     </li>
     <li>Exercise 4 - Create a prototype table view cell using the designer.
     </li>
+    <li>Exercise 5 - Create a grouped table with an index, headers and footers.
+    </li>
    </ul>
   </li>
   <li><b>IOS205 - Navigation Patterns</b>
