@@ -81,6 +81,12 @@ as the root view controller to the Tip Calculator app
     </li>
    </ul>
   </li>
+  <li><b>IOS115 - Customizing Table Views</b>
+   <ul>
+    <li>Exercise 1 - Customize a default table cell.
+    </li>
+   </ul>
+  </li>
   <li><b>IOS205 - Navigation Patterns</b>
    <ul>
     <li>Exercise 1 - Stack Navigation.
