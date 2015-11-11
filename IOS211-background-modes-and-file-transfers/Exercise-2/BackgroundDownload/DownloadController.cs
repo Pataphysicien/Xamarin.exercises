@@ -110,6 +110,15 @@ namespace BackgroundDownload
 		void InitializeSession()
 		{
 			// TODO: Initialize NSUrlSession.
+            using (var sessionConfig = UIDevice.CurrentDevice.CheckSystemVersion(8, 0)
+                ? NSUrlSessionConfiguration.CreateBackgroundSessionConfiguration(sessionId)
+                : NSUrlSessionConfiguration.BackgroundSessionConfiguration (sessionId))
+            {
+                sessionConfig.AllowsCellularAccess = true;
+                sessionConfig.NetworkServiceType = NSUrlRequestNetworkServiceType.Default;
+                var sessionDelegate = new CustomSessionDownloadDelegate (this);
+                this.session = NSUrlSession.FromConfiguration (sessionConfig, sessionDelegate, null);
+            }
 		}
 
 		/// <summary>
@@ -120,6 +129,15 @@ namespace BackgroundDownload
 			Console.WriteLine ("Creating new download task.");
 
 			// TODO: Create a new download task and start it.
+            var downloadTask = this.session.CreateDownloadTask (NSUrl.FromString (DownloadController.downloadUrl));
+
+            if (downloadTask == null)
+            {
+                new UIAlertView (string.Empty, "Failed to create download task! Please retry.", null, "OK").Show ();
+                return;
+            }
+
+            downloadTask.Resume ();
 		}
 	}
 }

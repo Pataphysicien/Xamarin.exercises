@@ -36,7 +36,11 @@ namespace BackgroundDownload
 		public static Action BackgroundSessionCompletionHandler;
 
 		// TODO: Override HandleEventsForBackgroundUrl() to retain the download completion handler if iOS restarts the app.
-
+        public override void HandleEventsForBackgroundUrl (UIApplication application, 
+            string sessionIdentifier, Action completionHandler)
+        {
+            BackgroundSessionCompletionHandler = completionHandler;
+        }
 		/// <summary>
 		/// Import private API to allow exiting app manually.
 		/// For demo purposes only! Do not use this in productive apps!
