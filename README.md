@@ -113,6 +113,12 @@ as the root view controller to the Tip Calculator app
     </li>
    </ul>
  </li>
+  <li><b>IOS211 - Background Modes and File Transfers</b>
+   <ul>
+    <li>Exercise 1 - Play music in the background.
+    </li>
+   </ul>
+ </li>
 </ol>
 
 
