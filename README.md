@@ -121,6 +121,22 @@ as the root view controller to the Tip Calculator app
     </li>
    </ul>
   </li>
+  <li><b>IOS215 - Editing TableViews</b>
+   <ul>
+    <li>Exercise 1 - Support editing operations on a Table View.
+    </li>
+    <li>Exercise 2 - Committing editing operations.
+    </li>
+    <li>Exercise 3 - Add support for swipe-gesture edit actions.
+    </li>
+    <li>Exercise 4 - Add support for the "pull-to-refresh" gesture.
+    </li>
+    <li>Exercise 5 - Add search support to a Table View Controller.
+    </li>
+    <li>Exercise 6 - Scope your searches with a scope bar.
+    </li>
+   </ul>
+  </li>
   <li><b>IOS230 - Background Modes and File Transfers</b>
    <ul>
     <li>Exercise 1 - Add a map and set the properties.
