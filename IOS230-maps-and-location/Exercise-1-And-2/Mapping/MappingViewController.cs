@@ -26,6 +26,21 @@ namespace Mapping
             
             // Release any cached data, images, etc that aren't in use.
         }
+
+        partial void btnStandard_Activated (UIBarButtonItem sender)
+        {
+            map.MapType = MonoTouch.MapKit.MKMapType.Standard;
+        }
+
+        partial void btnSatellite_Activated (UIBarButtonItem sender)
+        {
+            map.MapType = MonoTouch.MapKit.MKMapType.Satellite;
+        }
+
+        partial void btnHybrid_Activated (UIBarButtonItem sender)
+        {
+            map.MapType = MonoTouch.MapKit.MKMapType.Hybrid;
+        }
     }
 }
 
