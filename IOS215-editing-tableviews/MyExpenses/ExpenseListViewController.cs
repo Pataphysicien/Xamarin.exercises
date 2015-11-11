@@ -19,11 +19,23 @@ namespace MyExpenses
         {
             base.ViewDidLoad();
 
+            this.NavigationItem.RightBarButtonItem = this.EditButtonItem;
+
             expenses = new List<Expense>();
 
             DataStore db = new DataStore();
             expenses.AddRange(await db.LoadExpenses());
             TableView.ReloadData();
+        }
+
+        public override bool CanEditRow (UITableView tableView, NSIndexPath indexPath)
+        {
+            return true;
+        }
+
+        public override UITableViewCellEditingStyle EditingStyleForRow (UITableView tableView, NSIndexPath indexPath)
+        {
+            return UITableViewCellEditingStyle.Delete;
         }
 
         public override nint RowsInSection(UITableView tableview, nint section)
