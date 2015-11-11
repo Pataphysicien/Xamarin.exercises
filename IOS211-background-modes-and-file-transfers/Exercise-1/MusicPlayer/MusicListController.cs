@@ -22,9 +22,9 @@ namespace MusicPlayer
 			base.ViewDidLoad();
 
 			// TODO: set up an AVAudioSession and tell iOS we want to playback audio.
-//            var audioSession = AVAudioSession.SharedInstance();
-//            audioSession.SetCategory (AVAudioSessionCategory.Playback);
-//            audioSession.SetActive (true);
+            var audioSession = AVAudioSession.SharedInstance();
+            audioSession.SetCategory (AVAudioSessionCategory.Playback);
+            audioSession.SetActive (true);
 
 			// Setup UI.
 			this.InitUi ();
@@ -50,10 +50,15 @@ namespace MusicPlayer
 
 			// TODO: use AVAudioPlayer to load the MP3 file and start playing.
             // assign it to the existing audioPlayer field so it stays in memory.
+            this.audioPlayer = new AVAudioPlayer (
+                NSUrl.FromFilename (songInfo.FullDestinationFilePath),
+                "mp3",
+                out error);
 
 			if(error == null)
 			{
                 // TODO: play song using the audioPlayer field.
+                this.audioPlayer.Play ();
 
 				this.stopBtn.Enabled = true;
 
@@ -91,6 +96,8 @@ namespace MusicPlayer
 			base.ViewDidAppear (animated);
 
 			// TODO: start reacting to remote control events.
+            UIApplication.SharedApplication.BeginReceivingRemoteControlEvents ();
+            this.BecomeFirstResponder ();
 		}
 
 		public override void ViewDidDisappear (bool animated)
@@ -98,6 +105,8 @@ namespace MusicPlayer
 			base.ViewDidDisappear (animated);
 
 			// TODO: stop reacting to remote control events.
+            UIApplication.SharedApplication.EndReceivingRemoteControlEvents ();
+            this.ResignFirstResponder ();
 		}
 
 		/// <summary>
