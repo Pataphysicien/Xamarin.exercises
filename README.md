@@ -117,6 +117,8 @@ as the root view controller to the Tip Calculator app
    <ul>
     <li>Exercise 1 - Play music in the background.
     </li>
+    <li>Exercise 2 - Download a file in the background.
+    </li>
    </ul>
  </li>
 </ol>
