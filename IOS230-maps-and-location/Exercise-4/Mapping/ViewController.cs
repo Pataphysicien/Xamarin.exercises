@@ -21,6 +21,17 @@ namespace Mapping
 		{
 		}
 
+        void AddAnnotation (CLLocationCoordinate2D coord, string title, string subtitle)
+        {
+            var annotation = new MKPointAnnotation {
+                Title = title,
+                Subtitle = subtitle,
+                Coordinate = coord,
+            };
+
+            map.AddAnnotation (annotation);
+        }
+
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
@@ -72,11 +83,22 @@ namespace Mapping
         partial void btnPoints_Activated (UIBarButtonItem sender)
         {
             // TODO:
+            AddAnnotation(locSanFran, "San Fransisco", "Fog and Xamarin HQ");
+            AddAnnotation(locBoston, "Boston", "Get a donut and coffee here");
+            AddAnnotation(locLondon, "London", "Big Ben isn't a clock");
+            AddAnnotation(locSingapore, "Singapore", "Mostly islands");
+
+            btnAddPoints.Enabled = false;
+            btnRemovePoints.Enabled = true;
         }
 
 		partial void btnRemove_Activated (UIBarButtonItem sender)
 		{
             // TODO:
+            map.RemoveAnnotations(map.Annotations);
+
+            btnAddPoints.Enabled = true;
+            btnRemovePoints.Enabled = false;
 		}
 	}
 }
