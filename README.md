@@ -104,7 +104,7 @@ as the root view controller to the Tip Calculator app
     <li>Exercise 3 - Master/Detail Navigation.
     </li>
    </ul>
- </li>
+  </li>
   <li><b>IOS210 - Intro to Backgrounding: Running Finite-Length Tasks</b>
    <ul>
     <li>Exercise 1 - Integrate a Finite-Length Task with the application lifecycle.
@@ -112,7 +112,7 @@ as the root view controller to the Tip Calculator app
     <li>Exercise 2 - Code a “cancellable” Finite-Length Task.
     </li>
    </ul>
- </li>
+  </li>
   <li><b>IOS211 - Background Modes and File Transfers</b>
    <ul>
     <li>Exercise 1 - Play music in the background.
@@ -120,7 +120,19 @@ as the root view controller to the Tip Calculator app
     <li>Exercise 2 - Download a file in the background.
     </li>
    </ul>
- </li>
+  </li>
+  <li><b>IOS230 - Background Modes and File Transfers</b>
+   <ul>
+    <li>Exercise 1 - Add a map and set the properties.
+    </li>
+    <li>Exercise 2 - Show the device's current location.
+    </li>
+    <li>Exercise 3 - Changing the map's viewport with the camera.
+    </li>
+    <li>Exercise 4 - Add an annotation to your map.
+    </li>
+    </ul>
+  </li>
 </ol>
 
 
