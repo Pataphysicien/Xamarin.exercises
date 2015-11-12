@@ -10,13 +10,18 @@ using System.Threading.Tasks;
 
 namespace MyExpenses
 {
-	partial class ExpenseListViewController : UITableViewController
+    partial class ExpenseListViewController : UITableViewController, IUISearchResultsUpdating
 	{
         const string CellIdentifier = "ExpenseCell";
         List<Expense> expenses;
         UITableViewRowAction[ ] editActions;
+
+        // for adding new expense
         Expense newExpense;
 
+        // for search bar
+        UISearchController searchController;
+        List<Expense> filteredExpenses;
 
 		public ExpenseListViewController (IntPtr handle) : base (handle)
 		{
@@ -50,12 +55,45 @@ namespace MyExpenses
 
             expenses = new List<Expense>();
 
+            searchController = new UISearchController((UIViewController)null);
+            searchController.SearchResultsUpdater = this;
+            searchController.DimsBackgroundDuringPresentation = false;
+
+            TableView.TableHeaderView = searchController.SearchBar;
+            DefinesPresentationContext = true;
+            searchController.SearchBar.SizeToFit();
+
             DataStore db = new DataStore();
             expenses.AddRange(await db.LoadExpenses());
             TableView.ReloadData();
         }
 
+        public void UpdateSearchResultsForSearchController(UISearchController searchController)
+        {
+            if (searchController.Active)
+            {
+                filteredExpenses = new List<Expense> ();
 
+            }
+            else
+                filteredExpenses = null;
+
+            FilterContentForSearchText(searchController.SearchBar.Text);
+        }
+
+        void FilterContentForSearchText(string text)
+        {
+            // Make sure to add using statement for System.Linq if needed.
+            if (filteredExpenses != null) {
+                filteredExpenses.Clear();
+                filteredExpenses.AddRange(
+                    expenses.Where(e => 
+                        string.IsNullOrWhiteSpace(text) 
+                        || e.Title.ToUpper().Contains(text.ToUpper())));
+            }
+
+            TableView.ReloadData();
+        }
 
         void OnAddExpense(object sender, EventArgs e)
         {
@@ -133,9 +171,15 @@ namespace MyExpenses
 
         public override nint RowsInSection(UITableView tableview, nint section)
         {
+            // if search filter is specified...
+            if (filteredExpenses != null)
+                return filteredExpenses.Count;
+
+            // if inserting new expense...
             if (hasInsertionRow)
                 return expenses.Count + 1;
-            
+
+            // default is normal
             return expenses.Count;
         }
 
@@ -155,7 +199,10 @@ namespace MyExpenses
                 }
                 row--;
             }
-            var expense = expenses[row];
+            //var expense = expenses[row];
+            var expense = (filteredExpenses != null)
+                ? filteredExpenses[row]
+                : expenses[row];
 
             cell.TextLabel.Text = expense.Title;
             cell.DetailTextLabel.Text = expense.Amount.ToString("C");
