@@ -59,9 +59,13 @@ namespace MyExpenses
             searchController.SearchResultsUpdater = this;
             searchController.DimsBackgroundDuringPresentation = false;
 
+            searchController.SearchBar.ScopeButtonTitles = new[] { "All", "Lodging", 
+                "Meal", "Transportation", "Other" };
+
             TableView.TableHeaderView = searchController.SearchBar;
             DefinesPresentationContext = true;
             searchController.SearchBar.SizeToFit();
+            searchController.SearchBar.WeakDelegate = this;
 
             DataStore db = new DataStore();
             expenses.AddRange(await db.LoadExpenses());
@@ -78,21 +82,35 @@ namespace MyExpenses
             else
                 filteredExpenses = null;
 
-            FilterContentForSearchText(searchController.SearchBar.Text);
+            nint selectedScope = searchController.SearchBar.SelectedScopeButtonIndex;
+            string scope = searchController.SearchBar.ScopeButtonTitles[selectedScope];
+
+            FilterContentForSearchText(searchController.SearchBar.Text, scope);
         }
 
-        void FilterContentForSearchText(string text)
+        void FilterContentForSearchText(string text, string scope)
         {
             // Make sure to add using statement for System.Linq if needed.
             if (filteredExpenses != null) {
                 filteredExpenses.Clear();
                 filteredExpenses.AddRange(
                     expenses.Where(e => 
-                        string.IsNullOrWhiteSpace(text) 
-                        || e.Title.ToUpper().Contains(text.ToUpper())));
+                        (scope == "All" || e.Category == scope)
+                        && 
+                        (string.IsNullOrWhiteSpace(text) 
+                            || e.Title.ToUpper().Contains(text.ToUpper()))
+                    )
+                );
             }
 
             TableView.ReloadData();
+        }
+
+        [Export ("searchBar:selectedScopeButtonIndexDidChange:")]
+        public virtual void ScopeButtonChanged(UISearchBar searchBar, int selectedScope)
+        {
+            string scope = searchBar.ScopeButtonTitles[selectedScope];
+            FilterContentForSearchText(searchBar.Text, scope);
         }
 
         void OnAddExpense(object sender, EventArgs e)
