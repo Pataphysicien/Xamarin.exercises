@@ -4,6 +4,9 @@ using UIKit;
 using MyExpenses.Data;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
+using System.Threading.Tasks;
+
 
 namespace MyExpenses
 {
@@ -27,6 +30,23 @@ namespace MyExpenses
 
             var addButton = new UIBarButtonItem (UIBarButtonSystemItem.Add, OnAddExpense);
             this.NavigationItem.LeftBarButtonItem = addButton;
+
+            UIRefreshControl refreshControl = new UIRefreshControl ();
+            refreshControl.ValueChanged += async (object sender, EventArgs e) =>
+            {
+                // this happens in a background thread, so need to switch to main thread to update GUI
+                expenses = (await new DataStore ().Reset ()).ToList ();
+
+                await Task.Delay (3000); // to simulate a wait
+
+                BeginInvokeOnMainThread ( () =>{
+                    TableView.ReloadData ();
+                    refreshControl.EndRefreshing ();
+                });
+                
+            };
+
+            this.RefreshControl = refreshControl;
 
             expenses = new List<Expense>();
 
