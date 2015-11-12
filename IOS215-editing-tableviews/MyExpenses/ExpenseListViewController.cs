@@ -11,6 +11,9 @@ namespace MyExpenses
 	{
         const string CellIdentifier = "ExpenseCell";
         List<Expense> expenses;
+        UITableViewRowAction[ ] editActions;
+        Expense newExpense;
+
 
 		public ExpenseListViewController (IntPtr handle) : base (handle)
 		{
@@ -33,7 +36,6 @@ namespace MyExpenses
         }
 
 
-        Expense newExpense;
 
         void OnAddExpense(object sender, EventArgs e)
         {
@@ -173,6 +175,48 @@ namespace MyExpenses
                 }
                 newExpense = null;
             }
+        }
+
+        public override UITableViewRowAction[] EditActionsForRow (UITableView tableView, NSIndexPath indexPath)
+        {
+            if (editActions == null) {
+                editActions = new[] {
+                    UITableViewRowAction.Create(
+                        UITableViewRowActionStyle.Normal, 
+                        "Billable", OnFlipBillable),
+                    UITableViewRowAction.Create(
+                        UITableViewRowActionStyle.Normal, 
+                        "Not Billable", OnFlipBillable),
+                    UITableViewRowAction.Create(
+                        UITableViewRowActionStyle.Destructive,
+                        "Delete", OnDelete),
+                };
+                editActions[0].BackgroundColor = UIColor.Blue;
+            }
+
+            Expense expense = expenses[indexPath.Row];
+
+            var rowActions = new UITableViewRowAction[2];
+            rowActions[0] = (expense.Billable)
+                ? editActions[1] : editActions[0];
+            rowActions[1] = editActions[2];
+            return rowActions;
+        }
+
+        async void OnFlipBillable(UITableViewRowAction rowAction, NSIndexPath indexPath)
+        {
+            Expense expense = expenses[indexPath.Row];
+            expense.Billable = !expense.Billable;
+            TableView.ReloadRows(new[] { indexPath }, UITableViewRowAnimation.Automatic);
+            await new DataStore().Update(expense);
+        }
+
+        async void OnDelete(UITableViewRowAction rowAction, NSIndexPath indexPath)
+        {
+            Expense expense = expenses[indexPath.Row];
+            expenses.RemoveAt(indexPath.Row);
+            TableView.DeleteRows(new[] { indexPath }, UITableViewRowAnimation.Automatic);
+            await new DataStore().Delete(expense);
         }
 
 	}
