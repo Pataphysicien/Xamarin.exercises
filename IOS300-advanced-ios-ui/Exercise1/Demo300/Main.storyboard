@@ -17,15 +17,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="254" y="502" width="46" height="30"/>
-                                <state key="normal" title="Button">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="121" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="264.5" y="509" width="75" height="30"/>
+                                <state key="normal" title="Click Here!">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <rect key="frame" x="137" y="482" width="46" height="30"/>
-                                </variation>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Check this out -&gt; -&gt;" lineBreakMode="tailTruncation" id="132" translatesAutoresizingMaskIntoConstraints="NO" textAlignment="right" adjustsFontSizeToFit="NO">
+                                <rect key="frame" x="10" y="514" width="233.5" height="20.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
@@ -38,8 +42,11 @@
                             </mask>
                         </variation>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3" secondAttribute="bottom" constant="68" id="115"/>
-                            <constraint firstItem="8bC-Xf-vdC" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" constant="23" id="116"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="121" secondAttribute="bottom" constant="61" id="122"/>
+                            <constraint firstItem="121" firstAttribute="leading" secondItem="132" secondAttribute="trailing" constant="21" id="133"/>
+                            <constraint firstItem="132" firstAttribute="centerY" secondItem="121" secondAttribute="centerY" constant="0.0" id="134"/>
+                            <constraint firstItem="132" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="137"/>
+                            <constraint firstItem="121" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="2" id="140" priority="500"/>
                         </constraints>
                     </view>
                 </viewController>

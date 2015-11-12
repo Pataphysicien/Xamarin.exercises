@@ -153,6 +153,8 @@ as the root view controller to the Tip Calculator app
    <ul>
     <li>Exercise 1 - Add constraints to a View using the Xamarin.iOS Designer.
     </li>
+    <li>Exercise 1.1 - More constraints demo built on Exercise 1.
+    </li>
     <li>Exercise 2 - Using Auto Layouts in the Xamarin.iOS Designer.
     </li>
     <li>Exercise 3 - Updating Constraints.
