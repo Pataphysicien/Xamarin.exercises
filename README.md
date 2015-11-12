@@ -148,7 +148,20 @@ as the root view controller to the Tip Calculator app
     <li>Exercise 4 - Add an annotation to your map.
     </li>
     </ul>
+  </li>  
+  <li><b>IOS300 - Auto Layouts and Constraints</b>
+   <ul>
+    <li>Exercise 1 - Add constraints to a View using the Xamarin.iOS Designer.
+    </li>
+    <li>Exercise 2 - Using Auto Layouts in the Xamarin.iOS Designer.
+    </li>
+    <li>Exercise 3 - Updating Constraints.
+    </li>
+    <li>Exercise 4 - Animating Constraints.
+    </li>
+    </ul>
   </li>
+
 </ol>
 
 
