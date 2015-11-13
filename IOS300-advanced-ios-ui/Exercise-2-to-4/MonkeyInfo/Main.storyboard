@@ -31,15 +31,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="112" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="209" y="110" width="91" height="30"/>
-                                <state key="normal" title="Tree Monkey">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <constraints>
-                                    <constraint id="118" firstItem="112" firstAttribute="width" constant="91"/>
-                                </constraints>
-                            </button>
                         </subviews>
                         <constraints>
                             <constraint id="100" firstItem="5" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20"/>
@@ -48,11 +39,13 @@
                             <constraint firstItem="41" firstAttribute="top" secondItem="5" secondAttribute="bottom" constant="16" id="105"/>
                             <constraint firstItem="8bC-Xf-vdC" firstAttribute="trailing" secondItem="41" secondAttribute="trailing" constant="9" id="106"/>
                             <constraint firstItem="41" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="107"/>
-                            <constraint firstItem="112" firstAttribute="leading" secondItem="5" secondAttribute="trailing" constant="29" id="113"/>
-                            <constraint firstItem="112" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="110" id="114"/>
-                            <constraint firstItem="41" firstAttribute="top" secondItem="112" secondAttribute="bottom" constant="136" id="115"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="constLeftText" destination="107" id="name-outlet-107"/>
+                        <outlet property="constTopText" destination="105" id="name-outlet-105"/>
+                        <outlet property="imgMonkey" destination="5" id="name-outlet-5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
