@@ -150,6 +150,13 @@
     <Compile Include="AppDelegate.cs" />
     <Compile Include="ViewControllerSource.cs" />
     <Compile Include="MyTunesViewController.cs" />
+    <Compile Include="StreamLoader.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\MyTunes.Shared\MyTunes.Shared.csproj">
+      <Project>{99EA0121-24B4-4F43-878C-277863E0BA4F}</Project>
+      <Name>MyTunes.Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>
