@@ -163,7 +163,7 @@ as the root view controller to the Tip Calculator app
     </li>
     </ul>
   </li>
-  <li><b>IOS300 - Intro to Cross-Platform Mobile Development</b>
+  <li><b>XAM300 - Intro to Cross-Platform Mobile Development</b>
    <ul>
     <li>Exercise 1 - Working with Shared Projects.
     </li>
