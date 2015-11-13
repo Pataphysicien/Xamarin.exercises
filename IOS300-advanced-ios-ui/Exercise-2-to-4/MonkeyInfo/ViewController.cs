@@ -7,6 +7,8 @@ namespace MonkeyInfo
 {
     public partial class ViewController : UIViewController
     {
+        bool monkeyIsOnLeft=true;
+
         public ViewController (IntPtr handle) : base (handle)
         {
         }
@@ -15,7 +17,33 @@ namespace MonkeyInfo
         {
             base.ViewDidLoad ();
             // Perform any additional setup after loading the view, typically from a nib.
+            imgMonkey.UserInteractionEnabled = true;
+
+            imgMonkey.AddGestureRecognizer(
+                new UITapGestureRecognizer(() => AnimateMonkey()));
         }
+
+        private void AnimateMonkey()
+        {
+            //let's move the monkey
+            this.View.RemoveConstraint (constMonkeyEdge);
+
+            monkeyIsOnLeft = !monkeyIsOnLeft;
+
+            var edge = (monkeyIsOnLeft) ? NSLayoutAttribute.Leading : NSLayoutAttribute.Trailing;
+
+            constMonkeyEdge = GetConstraint (constraint: constMonkeyEdge,
+                attribute1: edge,
+                attribute2: edge,
+                constant: constMonkeyEdge.Constant * -1
+            );
+
+            UIView.Animate (2.0, () => {
+                this.View.AddConstraint (constMonkeyEdge);
+                this.View.LayoutIfNeeded();
+            });
+        }
+
 
         public override void DidReceiveMemoryWarning ()
         {
@@ -99,6 +127,8 @@ namespace MonkeyInfo
                 (multiplier == null) ? constraint.Multiplier : multiplier.Value,
                 (constant == null) ? constraint.Constant : constant.Value);
         }
+
+
     }
 }
 

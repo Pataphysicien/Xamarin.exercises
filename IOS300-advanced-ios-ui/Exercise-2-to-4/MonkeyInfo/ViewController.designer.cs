@@ -20,6 +20,10 @@ namespace MonkeyInfo
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
+		NSLayoutConstraint constMonkeyEdge { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
 		NSLayoutConstraint constTopText { get; set; }
 
 		[Outlet]
@@ -31,6 +35,10 @@ namespace MonkeyInfo
 			if (constLeftText != null) {
 				constLeftText.Dispose ();
 				constLeftText = null;
+			}
+			if (constMonkeyEdge != null) {
+				constMonkeyEdge.Dispose ();
+				constMonkeyEdge = null;
 			}
 			if (constTopText != null) {
 				constTopText.Dispose ();

@@ -45,6 +45,7 @@
                         <outlet property="constLeftText" destination="107" id="name-outlet-107"/>
                         <outlet property="constTopText" destination="105" id="name-outlet-105"/>
                         <outlet property="imgMonkey" destination="5" id="name-outlet-5"/>
+                        <outlet property="constMonkeyEdge" destination="101" id="name-outlet-101"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
