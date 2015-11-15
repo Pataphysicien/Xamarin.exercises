@@ -6,20 +6,14 @@ namespace People
 {
     public class App : Application
     {
-        public App (string displayText)
+        public static PersonRepository PersonRepo { get; private set; }
+
+        public App (string dbPath)
         {
+            PersonRepo = new PersonRepository (dbPath);
+
             // The root page of your application
-            MainPage = new ContentPage {
-                Content = new StackLayout {
-                    VerticalOptions = LayoutOptions.Center,
-                    Children = {
-                        new Label {
-                            XAlign = TextAlignment.Center,
-                            Text = displayText
-                        }
-                    }
-                }
-            };
+            this.MainPage = new People.MainPage();
         }
 
         protected override void OnStart ()
