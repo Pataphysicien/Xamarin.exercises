@@ -163,6 +163,20 @@ as the root view controller to the Tip Calculator app
     </li>
     </ul>
   </li>
+
+  <li><b>XAM160 - SQLite in Mobile</b>
+   <ul>
+    <li>Exercise 1 - Determine your database file path.
+    </li>
+    <li>Exercise 2 - Add SQLite.Net to your projects.
+    </li>
+    <li>Exercise 3 - Access a SQLite database with the SQLite.Net PCL.
+    </li>
+    <li>Exercise 4 - Access SQLite database using asynchronous methods.
+    </li>
+   </ul>
+  </li>
+
   <li><b>XAM300 - Intro to Cross-Platform Mobile Development</b>
    <ul>
     <li>Exercise 1 - Working with Shared Projects.
