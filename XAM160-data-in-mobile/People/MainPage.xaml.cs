@@ -12,19 +12,22 @@ namespace People
             InitializeComponent();            
         }
 
-        public void OnNewButtonClicked(object sender, EventArgs args)
+        public async void OnNewButtonClicked(object sender, EventArgs args)
         {
             statusMessage.Text = "";
                         
-            App.PersonRepo.AddNewPerson(newPerson.Text);
+            await App.PersonRepo.AddNewPersonAsync(newPerson.Text);
             statusMessage.Text = App.PersonRepo.StatusMessage;
         }
         
-        public void OnGetButtonClicked(object sender, EventArgs args)
+        public async void OnGetButtonClicked(object sender, EventArgs args)
         {
             statusMessage.Text = "";
 
-            ObservableCollection<Person> people = new ObservableCollection<Person>(App.PersonRepo.GetAllPeople());
+            ObservableCollection<Person> people = 
+                new ObservableCollection<Person>(
+                    await App.PersonRepo.GetAllPeopleAsync()
+                );
             peopleList.ItemsSource = people;
         }
     }
