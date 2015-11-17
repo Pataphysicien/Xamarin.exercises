@@ -1,5 +1,5 @@
-# Xamarin.Exercises
-Contains a list of course exercises that I've worked on while learning  Xamarin
+
+Contains a list of course exercises that I've worked on while learning this cross-platform mobile development tool.
 
 
 <ol>
