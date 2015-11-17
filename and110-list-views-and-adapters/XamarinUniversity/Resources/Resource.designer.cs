@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("XamarinUniversityInstructors.Resource", IsApplication=true)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("XamarinUniversity.Resource", IsApplication=true)]
 
-namespace XamarinUniversityInstructors
+namespace XamarinUniversity
 {
 	
 	

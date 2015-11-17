@@ -7,9 +7,9 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 
-namespace XamarinUniversityInstructors
+namespace XamarinUniversity
 {
-	[Activity(Label = "Instructors", MainLauncher = true, Icon = "@drawable/icon")]
+	[Activity (Label = "XamarinUniversity", MainLauncher = true, Icon = "@drawable/icon")]
 	public class MainActivity : Activity
 	{
 
@@ -24,23 +24,6 @@ namespace XamarinUniversityInstructors
 
 			lv.Adapter = new ArrayAdapter<Instructor> (this, Android.Resource.Layout.SimpleListItem1, InstructorData.Instructors);
 
-			lv.ItemClick += onItemClick;
-
-		}
-
-		void onItemClick (object sender, AdapterView.ItemClickEventArgs e)
-		{
-			Console.WriteLine (e.Position);
-
-			var instructor = InstructorData.Instructors [e.Position];
-
-			var dlg = new AlertDialog.Builder (this);
-			dlg.SetMessage (instructor.Name);
-			dlg.SetNeutralButton ("OK", delegate {
-				
-			});
-
-			dlg.Show ();
 		}
 	}
 }

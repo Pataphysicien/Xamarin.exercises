@@ -1,4 +1,4 @@
-namespace XamarinUniversityInstructors
+namespace XamarinUniversity
 {
 	public class Instructor
 	{

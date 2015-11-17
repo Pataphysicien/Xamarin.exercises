@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 
-namespace XamarinUniversityInstructors
+namespace XamarinUniversity
 {
 	public static class InstructorData
 	{
