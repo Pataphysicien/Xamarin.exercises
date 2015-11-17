@@ -1,5 +1,5 @@
-# XamarinUniversity
-Contains a list of course exercises that I've worked on while taking the Xamarin University
+# Xamarin.Exercises
+Contains a list of course exercises that I've worked on while learning  Xamarin
 
 
 <ol>
