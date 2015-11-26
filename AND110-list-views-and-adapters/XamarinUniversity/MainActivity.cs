@@ -22,7 +22,8 @@ namespace XamarinUniversity
 
 			var lv = FindViewById<ListView> (Resource.Id.instructorListView);
 
-			lv.Adapter = new ArrayAdapter<Instructor> (this, Android.Resource.Layout.SimpleListItem1, InstructorData.Instructors);
+			//lv.Adapter = new ArrayAdapter<Instructor> (this, Android.Resource.Layout.SimpleListItem1, InstructorData.Instructors);
+			lv.Adapter = new InstructorAdapter(InstructorData.Instructors);
 
 			lv.ItemClick += (object sender, AdapterView.ItemClickEventArgs e) => {
 				var pos = e.Position;
