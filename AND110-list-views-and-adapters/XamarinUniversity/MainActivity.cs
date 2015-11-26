@@ -24,6 +24,17 @@ namespace XamarinUniversity
 
 			lv.Adapter = new ArrayAdapter<Instructor> (this, Android.Resource.Layout.SimpleListItem1, InstructorData.Instructors);
 
+			lv.ItemClick += (object sender, AdapterView.ItemClickEventArgs e) => {
+				var pos = e.Position;
+
+				var instructor = InstructorData.Instructors[pos];
+
+				var dlg = new AlertDialog.Builder(this);
+				dlg.SetMessage(instructor.Name);
+				dlg.SetNeutralButton("OK", delegate{});
+				dlg.Show();
+			};
+
 		}
 	}
 }

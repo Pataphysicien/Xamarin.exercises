@@ -1,4 +1,4 @@
-
+﻿
 Contains a list of course exercises that I've worked on while learning this cross-platform mobile development tool.
 
 
@@ -33,6 +33,12 @@ Contains a list of course exercises that I've worked on while learning this cros
     <li>Exercise 1 - Populate a ListView using an ArrayAdapter
     </li>
     <li>Exercise 2 - Handle list-item click events
+    </li>
+    <li>Exercise 3 - Implement a custom adapter
+    </li>
+    <li>Exercise 4 - Use layout recycling and the view-holder pattern
+    </li>
+    <li>Exercise 5 - Enable fast scrolling and code a section indexer
     </li>
     </ul>
  </li>
