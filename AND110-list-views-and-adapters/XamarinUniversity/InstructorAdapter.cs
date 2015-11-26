@@ -25,21 +25,31 @@ namespace XamarinUniversity
 
 		public override Android.Views.View GetView (int position, Android.Views.View convertView, Android.Views.ViewGroup parent)
 		{
-			var inflater = LayoutInflater.From (parent.Context);
-			var view = inflater.Inflate (Resource.Layout.InstructorRow, parent, false);
+			var view = convertView;
+			if (view == null)
+			{
+				var inflater = LayoutInflater.From (parent.Context);
+				view = inflater.Inflate (Resource.Layout.InstructorRow, parent, false);
+				var vh = new ViewHolder ();
 
-			var photo = view.FindViewById<ImageView> (Resource.Id.photoImageView);
-			var name = view.FindViewById<TextView> (Resource.Id.nameTextView);
-			var specialty = view.FindViewById<TextView> (Resource.Id.specialtyTextView);
+				vh.Photo = view.FindViewById<ImageView> (Resource.Id.photoImageView);
+				vh.Name = view.FindViewById<TextView> (Resource.Id.nameTextView);
+				vh.Specialty = view.FindViewById<TextView> (Resource.Id.specialtyTextView);
+
+				view.Tag = vh;
+			}
+
+			var viewHolder = (ViewHolder)view.Tag;
 
 			var instructor = instructors [position];
 
-			Stream stream = parent.Context.Assets.Open (instructor.ImageUrl);
-			Drawable drawable = Drawable.CreateFromStream (stream, null);
-			photo.SetImageDrawable (drawable);
+//			Stream stream = parent.Context.Assets.Open (instructor.ImageUrl);
+//			Drawable drawable = Drawable.CreateFromStream (stream, null);
+			Drawable drawable = ImageAssetManager.Get(parent.Context, instructor.ImageUrl);
+			viewHolder.Photo.SetImageDrawable (drawable);
 
-			name.Text = instructor.Name;
-			specialty.Text = instructor.Specialty;
+			viewHolder.Name.Text = instructor.Name;
+			viewHolder.Specialty.Text = instructor.Specialty;
 
 			return view;
 		}
