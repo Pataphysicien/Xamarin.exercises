@@ -24,18 +24,30 @@ namespace XamarinUniversity
 
 			//lv.Adapter = new ArrayAdapter<Instructor> (this, Android.Resource.Layout.SimpleListItem1, InstructorData.Instructors);
 			lv.Adapter = new InstructorAdapter(InstructorData.Instructors);
+			lv.FastScrollEnabled = true;
 
-			lv.ItemClick += (object sender, AdapterView.ItemClickEventArgs e) => {
-				var pos = e.Position;
+//			lv.ItemClick += OnItemClick_showDlg;
+			lv.ItemClick += OnItemClick;
 
-				var instructor = InstructorData.Instructors[pos];
+		}
 
-				var dlg = new AlertDialog.Builder(this);
-				dlg.SetMessage(instructor.Name);
-				dlg.SetNeutralButton("OK", delegate{});
-				dlg.Show();
-			};
+		void OnItemClick(object sender, AdapterView.ItemClickEventArgs e)
+		{
+			var intent = new Intent (this, typeof(InstructorDetailsActivity));
+			intent.PutExtra ("position", e.Position);
+			StartActivity (intent);
+		}
 
+		void OnItemClick_showDlg(object sender, AdapterView.ItemClickEventArgs e)
+		{
+			var pos = e.Position;
+
+			var instructor = InstructorData.Instructors[pos];
+
+			var dlg = new AlertDialog.Builder(this);
+			dlg.SetMessage(instructor.Name);
+			dlg.SetNeutralButton("OK", delegate{});
+			dlg.Show();
 		}
 	}
 }

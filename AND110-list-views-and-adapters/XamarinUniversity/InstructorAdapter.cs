@@ -7,9 +7,13 @@ using Android.Graphics.Drawables;
 
 namespace XamarinUniversity
 {
-	public class InstructorAdapter : BaseAdapter<Instructor>
+	public class InstructorAdapter : BaseAdapter<Instructor>, ISectionIndexer
 	{
 		List<Instructor> instructors;
+
+		Java.Lang.Object[] sectionHeaders = SectionIndexerBuilder.BuildSectionHeaders (InstructorData.Instructors);
+		Dictionary<int,int> positionForSectionMap = SectionIndexerBuilder.BuildPositionForSectionMap(InstructorData.Instructors);
+		Dictionary<int,int> sectionForPositionMap = SectionIndexerBuilder.BuildSectionForPositionMap(InstructorData.Instructors);
 
 		public InstructorAdapter (List<Instructor> instructors)
 		{
@@ -67,6 +71,21 @@ namespace XamarinUniversity
 		}
 
 		#endregion
+
+		public int GetPositionForSection (int sectionIndex)
+		{
+			return positionForSectionMap [sectionIndex];
+		}
+
+		public int GetSectionForPosition (int position)
+		{
+			return sectionForPositionMap [position];
+		}
+
+		public Java.Lang.Object[] GetSections ()
+		{
+			return sectionHeaders;
+		}
 	}
 }
 
