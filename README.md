@@ -28,7 +28,7 @@ Contains a list of course exercises that I've worked on while learning this cros
     </li>
     </ul>
  </li>
-   <li><b>AND110 - ListViews and Adapters</b>
+ <li><b>AND110 - ListViews and Adapters</b>
    <ul>
     <li>Exercise 1 - Populate a ListView using an ArrayAdapter
     </li>
@@ -41,6 +41,16 @@ Contains a list of course exercises that I've worked on while learning this cros
     <li>Exercise 5 - Enable fast scrolling and code a section indexer
     </li>
     </ul>
+ </li>
+ <li><b>AND205 - Navigation Patterns</b>
+   <ul>
+    <li>Exercise 1 - Stack Navigation
+    </li>
+    <li>Exercise 2 - Tab Navigation
+    </li>
+    <li>Exercise 3 - Drawer Navigation
+    </li>
+   </ul>
  </li>
 </li>
    <li><b>IOS101 - Intro to IOS</b>
