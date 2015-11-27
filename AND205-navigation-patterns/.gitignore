@@ -11,6 +11,7 @@ TestResults/
 Makefile.in
 *.DS_Store
 *.sln.cache
+*.dll
 *.suo
 *.cache
 *.pidb
