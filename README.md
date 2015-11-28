@@ -1,4 +1,4 @@
-﻿
+
 Contains a list of course exercises that I've worked on while learning this cross-platform mobile development tool.
 
 
@@ -178,6 +178,17 @@ as the root view controller to the Tip Calculator app
     <li>Exercise 4 - Animating Constraints.
     </li>
     </ul>
+  </li>
+
+  <li><b>XAM150 - Consuming RESTful Web Services</b>
+   <ul>
+    <li>Exercise 1 - Determine the network connectivity.
+    </li>
+    <li>Exercise 2 - Communicating with a Book Service.
+    </li>
+    <li>Exercise 3 - Adding support for ModernHttpClient.
+    </li>
+   </ul>
   </li>
 
   <li><b>XAM160 - SQLite in Mobile</b>
