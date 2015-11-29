@@ -4,6 +4,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net.Http;
 using Newtonsoft.Json;
+using ModernHttpClient;
 
 namespace BookClient.Data
 {
@@ -14,7 +15,7 @@ namespace BookClient.Data
 
         private async Task<HttpClient> GetClient()
         {
-            HttpClient client = new HttpClient();
+            HttpClient client = new HttpClient( new NativeMessageHandler() );
             if (string.IsNullOrEmpty(authorizationKey))
             {
                 authorizationKey = await client.GetStringAsync(Url + "login");
