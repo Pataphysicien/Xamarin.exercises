@@ -180,6 +180,15 @@ as the root view controller to the Tip Calculator app
     </ul>
   </li>
 
+  <li><b>XAM110 - Intro to Cross-Platform Mobile Development</b>
+   <ul>
+    <li>Exercise 1 - Working with Shared Projects.
+    </li>
+    <li>Exercise 2 - Working with Portable Class Libraries.
+    </li>
+   </ul>
+  </li>
+
   <li><b>XAM150 - Consuming RESTful Web Services</b>
    <ul>
     <li>Exercise 1 - Determine the network connectivity.
@@ -204,14 +213,15 @@ as the root view controller to the Tip Calculator app
    </ul>
   </li>
 
-  <li><b>XAM300 - Intro to Cross-Platform Mobile Development</b>
+  <li><b>XAM300 - Advanced Cross-Platform Development</b>
    <ul>
-    <li>Exercise 1 - Working with Shared Projects.
+    <li>Exercise 1 - Using the Factory Pattern.
     </li>
-    <li>Exercise 2 - Working with Portable Class Libraries.
+    <li>Exercise 2 - Build a Service Locator.
     </li>
-
-    </ul>
+    <li>Exercise 3 - Using Dependency Injection.
+    </li>
+   </ul>
   </li>
 
 </ol>
