@@ -10,35 +10,25 @@ namespace GreatQuotes
 	[Application(Icon="@drawable/icon", Label="@string/app_name")]
 	public class App : Application
 	{
-//		static QuoteLoader quoteLoader;
-//		public static List<GreatQuote> Quotes { get; private set; }
-//
+        readonly SimpleContainer container = new SimpleContainer();
+
 		public App(IntPtr h, JniHandleOwnership jho) : base(h, jho)
 		{
 		}
 
 		public override void OnCreate()
 		{
-            QuoteRepositoryFactory.Create = () => new QuoteLoader();
+            //QuoteRepositoryFactory.Create = () => new QuoteLoader();
+
+            container.Register<IQuoteRepository, QuoteLoader>();
+            container.Create<QuoteManager>();
 
             ServiceLocator.Instance.Add<ITextToSpeech, TextToSpeechService>();
 
 			base.OnCreate();
-//			quoteLoader = new QuoteLoader();
-//			Quotes = quoteLoader.Load().ToList();
-//
-//            QuoteRepositoryFactory.Create = CreateRepository;
-        }
+       }
 
-//		public static void Save()
-//		{
-//			quoteLoader.Save(Quotes);
-//		}
-//
-//        IQuoteRepository CreateRepository()
-//        {
-//            return new QuoteLoader();
-//        }  
+
 	}
 }
 

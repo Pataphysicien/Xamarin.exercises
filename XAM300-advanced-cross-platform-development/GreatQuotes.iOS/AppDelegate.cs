@@ -14,13 +14,18 @@ namespace GreatQuotes
 	[Register("AppDelegate")]
 	public partial class AppDelegate : UIApplicationDelegate
 	{
+        readonly SimpleContainer container = new SimpleContainer();
+
 		public override UIWindow Window { get; set; }
 
 		public override void FinishedLaunching(UIApplication application)
 		{
-            QuoteRepositoryFactory.Create = () => new QuoteLoader();
-            ServiceLocator.Instance.Add<ITextToSpeech, TextToSpeechService>();
+            //QuoteRepositoryFactory.Create = () => new QuoteLoader();
 
+            container.Register<IQuoteRepository, QuoteLoader>();
+            container.Create<QuoteManager>();
+
+            ServiceLocator.Instance.Add<ITextToSpeech, TextToSpeechService>();
         }
 
 		public async override void DidEnterBackground(UIApplication application)
