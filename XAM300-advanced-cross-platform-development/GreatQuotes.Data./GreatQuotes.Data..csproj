@@ -35,6 +35,8 @@
     <Compile Include="IQuoteRepository.cs" />
     <Compile Include="QuoteRepositoryFactory.cs" />
     <Compile Include="QuoteManager.cs" />
+    <Compile Include="ITextToSpeech.cs" />
+    <Compile Include="Infrastructure\ServiceLocator.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
 </Project>

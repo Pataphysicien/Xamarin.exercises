@@ -53,6 +53,7 @@
     <Compile Include="EditQuoteActivity.cs" />
     <Compile Include="App.cs" />
     <Compile Include="Data\QuoteLoader.cs" />
+    <Compile Include="Infrastructure\TextToSpeechService.Android.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -96,6 +97,7 @@
     <Folder Include="Resources\drawable-xhdpi\" />
     <Folder Include="Resources\drawable-xxhdpi\" />
     <Folder Include="Data\" />
+    <Folder Include="Infrastructure\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ItemGroup>

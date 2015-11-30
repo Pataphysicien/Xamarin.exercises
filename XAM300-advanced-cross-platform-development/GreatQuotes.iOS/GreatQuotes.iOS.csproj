@@ -127,6 +127,7 @@
     </Compile>
     <Compile Include="TableViewSource.cs" />
     <Compile Include="Data\QuoteLoader.cs" />
+    <Compile Include="Infrastructure\TextToSpeechService.iOS.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
@@ -137,5 +138,8 @@
       <Project>{FE505B85-BFC2-42B9-B43A-D379F0C21E6C}</Project>
       <Name>GreatQuotes.Data.</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Infrastructure\" />
   </ItemGroup>
 </Project>

@@ -1,3 +1,5 @@
+using GreatQuotes.Data;
+
 namespace GreatQuotes
 {
 	public class GreatQuote
@@ -14,5 +16,20 @@ namespace GreatQuotes
 			Author = author;
 			QuoteText = quoteText;
 		}
+
+        public void SayQuote()
+        {
+            ITextToSpeech tts = ServiceLocator.Instance.Resolve<ITextToSpeech>();
+
+            if(tts != null)
+            {
+                string text = QuoteText;
+                if(!string.IsNullOrEmpty(Author))
+                {
+                    text += " by " + Author;
+                }
+                tts.Speak(text);
+            }
+        }
 	}
 }

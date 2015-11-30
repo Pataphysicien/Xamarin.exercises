@@ -19,6 +19,7 @@ namespace GreatQuotes
 		public override void FinishedLaunching(UIApplication application)
 		{
             QuoteRepositoryFactory.Create = () => new QuoteLoader();
+            ServiceLocator.Instance.Add<ITextToSpeech, TextToSpeechService>();
 
         }
 
