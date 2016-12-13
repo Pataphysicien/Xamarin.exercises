@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyTunes.iOS", "MyTunes.iOS\MyTunes.iOS.csproj", "{A3D17E5F-2659-4EAD-87A1-3B7E56E90807}"
 EndProject
@@ -11,7 +11,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyTunes.WP8", "MyTunes.WP8\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyTunes.UWP", "MyTunes.UWP\MyTunes.UWP.csproj", "{4B2D276F-06BB-4F5C-8523-51F182A0CB19}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "MyTunes.Shared", "MyTunes.Shared\MyTunes.Shared.shproj", "{FC3E3D8B-0930-4310-91DB-F2CDE3040BE1}"
+EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		MyTunes.Shared\MyTunes.Shared.projitems*{30215060-01fc-4066-a9fc-68d8792297d8}*SharedItemsImports = 4
+		MyTunes.Shared\MyTunes.Shared.projitems*{a3d17e5f-2659-4ead-87a1-3b7e56e90807}*SharedItemsImports = 4
+		MyTunes.Shared\MyTunes.Shared.projitems*{cc9983a8-412b-434b-a38f-84f7f754d6d2}*SharedItemsImports = 4
+		MyTunes.Shared\MyTunes.Shared.projitems*{fc3e3d8b-0930-4310-91db-f2cde3040be1}*SharedItemsImports = 13
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
 		Ad-Hoc|ARM = Ad-Hoc|ARM
