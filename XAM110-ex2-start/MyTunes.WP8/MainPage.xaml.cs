@@ -24,6 +24,7 @@ namespace MyTunes
         /// This parameter is typically used to configure the page.</param>
         protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
+            SongLoader.StreamLoader = new StreamLoader();
             this.DataContext = await SongLoader.Load();
         }
     }
