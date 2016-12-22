@@ -1,13 +1,16 @@
 ﻿using System.Text;
 
-namespace Core
+namespace Phoneword.Core
 {
     public static class PhonewordTranslator
     {
-        public static string ToNumber(string raw)
+        public static bool TryToNumber(string raw, out string val)
         {
             if (string.IsNullOrWhiteSpace(raw))
-                return null;
+            {
+                val = default(string);
+                return false;
+            }
 
             raw = raw.ToUpperInvariant();
 
@@ -18,15 +21,18 @@ namespace Core
                     newNumber.Append(c);
                 else
                 {
-                    var result = TranslateToNumber(c);
-                    if (result != null)
-                        newNumber.Append(result);
-                    // Bad character?
+                    int result;
+                    if (TryTranslateToNumber(c, out result))
+                        newNumber.Append(result);// Bad character?
                     else
-                        return null;
+                    {
+                        val = default(string);
+                        return false;
+                    }
                 }
             }
-            return newNumber.ToString();
+            val = newNumber.ToString();
+            return true;
         }
 
         static bool Contains(this string keyString, char c)
@@ -38,14 +44,18 @@ namespace Core
             "ABC", "DEF", "GHI", "JKL", "MNO", "PQRS", "TUV", "WXYZ"
         };
 
-        static int? TranslateToNumber(char c)
+        static bool TryTranslateToNumber(char c, out int val)
         {
             for (int i = 0; i < digits.Length; i++)
             {
                 if (digits[i].Contains(c))
-                    return 2 + i;
+                {
+                    val = 2 + i;
+                    return true;
+                }
             }
-            return null;
+            val = (default(int));
+            return false;
         }
     }
 }

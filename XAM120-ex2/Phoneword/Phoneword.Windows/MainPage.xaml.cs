@@ -21,7 +21,7 @@ namespace Phoneword.Windows
         {
             this.InitializeComponent();
 
-            LoadApplication(new Phoneword.App());
+            LoadApplication(new Phoneword.Core.App());
         }
     }
 }

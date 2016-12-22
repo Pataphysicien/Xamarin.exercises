@@ -28,7 +28,7 @@ namespace Phoneword.WinPhone
 
             this.NavigationCacheMode = NavigationCacheMode.Required;
 
-            LoadApplication(new Phoneword.App());
+            LoadApplication(new Phoneword.Core.App());
         }
 
         /// <summary>
